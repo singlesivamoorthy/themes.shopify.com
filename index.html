@@ -25,7 +25,145 @@
     <link rel="stylesheet" href="./Ecommerce Website Templates - Free and Premium Themes for Your Online Store._files/application-c0ccbb7719066bbc7f348f853f94f66ea2c41014d691c1393e2f5de4c7c8d1e5.css">
   <link rel="stylesheet" href="./Ecommerce Website Templates - Free and Premium Themes for Your Online Store._files/tailwind-49f6ff5f50539b56989892e5162ded89783ec557f0cd83ea557a20fa86718b7f.css" data-turbo-track="reload">
 <link rel="stylesheet" href="./Ecommerce Website Templates - Free and Premium Themes for Your Online Store._files/inter-font-013a82a3f24b133ada787c7ed29ae12fec6fef808a104afb5332cad9be6be848.css" data-turbo-track="reload">
-       
+        <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMHDF2L');</script>
+  <!-- End Google Tag Manager -->
+
+  <script type="text/javascript">
+  (function(){
+    function trekkieLoadOnError() {
+      var Monorail = {
+        produce: function produce(monorailDomain, schemaId, payload) {
+          var currentMs = new Date().getTime();
+          var event = {
+            schema_id: schemaId,
+            payload: payload,
+            metadata: {
+              event_created_at_ms: currentMs,
+              event_sent_at_ms: currentMs
+            }
+          };
+          return Monorail.sendRequest("https://" + monorailDomain + "/v1/produce", JSON.stringify(event));
+        },
+        sendRequest: function sendRequest(endpointUrl, payload) {
+          // Try the sendBeacon API
+          if (window && window.navigator && typeof window.navigator.sendBeacon === 'function' && typeof window.Blob === 'function' && !Monorail.isIos12()) {
+            var blobData = new window.Blob([payload], {
+              type: 'text/plain'
+            });
+      
+            if (window.navigator.sendBeacon(endpointUrl, blobData)) {
+              return true;
+            } // sendBeacon was not successful
+      
+          } // XHR beacon   
+      
+          var xhr = new XMLHttpRequest();
+      
+          try {
+            xhr.open('POST', endpointUrl);
+            xhr.setRequestHeader('Content-Type', 'text/plain');
+            xhr.send(payload);
+          } catch (e) {
+            console.log(e);
+          }
+      
+          return false;
+        },
+        isIos12: function isIos12() {
+          return window.navigator.userAgent.lastIndexOf('iPhone; CPU iPhone OS 12_') !== -1 || window.navigator.userAgent.lastIndexOf('iPad; CPU OS 12_') !== -1;
+        }
+      };
+      Monorail.produce('monorail-edge.shopifysvc.com',
+        'theme_store_trekkie_load_error/1.0',
+        {
+          url: window.location.href,
+            'locale': 'en',
+      });
+    }
+    var config = {
+      'Trekkie': {
+        'appName': 'themestore',
+        'defaultAttributes': {
+            'shopId': '76055118104'
+        },
+        'navigationTimingApiMeasurementsEnabled': true,
+        'navigationTimingApiMeasurementsSampleRate': 0.01,
+        'isServerSideCookieWritingEnabled': true
+      },
+      'Clickstream': {
+        'appName': 'themestore'
+      },
+      'Facebook Pixel': {
+        pixelId: '1904241839800487'
+      },
+      'Optimizely': {}
+    };
+    var trekkie_version = '2020.07.23.1';
+    var analytics = window.analytics = window.analytics || [];
+    if (analytics.integrations) {
+      return;
+    }
+    analytics.methods = [
+      'identify',
+      'page',
+      'ready',
+      'track',
+    ];
+    analytics.factory = function(method){
+      return function(){
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(method);
+        analytics.push(args);
+        return analytics;
+      };
+    };
+    for (var i = 0; i < analytics.methods.length; i++) {
+      var key = analytics.methods[i];
+      analytics[key] = analytics.factory(key);
+    }
+    analytics.load = function(config){
+      analytics.config = config;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.onerror = trekkieLoadOnError
+      script.async = true;
+      script.src = '//cdn.shopify.com/s/trekkie.' + config.Trekkie.appName + '.min.js?v=' + trekkie_version;
+      var first = document.getElementsByTagName('script')[0];
+      first.parentNode.insertBefore(script, first);
+    };
+    analytics.load(config);
+    analytics.page();
+  })();
+</script>
+
+  <script type="text/javascript">
+  //<![CDATA[
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','_gaUTracker');
+
+  var _gaUTrackerOptions = {};
+
+  analytics.ready(function() {
+    _gaUTracker('create', 'UA-82702-49', _gaUTrackerOptions);
+    _gaUTracker('set', 'transport', 'beacon');
+    _gaUTracker('require', 'displayfeatures');
+    _gaUTracker('send', 'pageview');
+
+    _gaUTrackerOptions.name = '_other';
+    _gaUTracker('create', 'UA-82702-28', _gaUTrackerOptions);
+    _gaUTracker('_other.set', 'transport', 'beacon');
+    _gaUTracker('_other.require', 'displayfeatures');
+    _gaUTracker('_other.send', 'pageview');
+  });
+  //]]>
+</script>
 
 
     <link rel="alternate" href="https://themes.shopify.com/themes" hreflang="en">
@@ -55,7 +193,10 @@
 </head>
 
 <body class="page--themes shopify-sans-supported-lang segment-online" data-dux-initialized="1">
- 
+      <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMHDF2L"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
 
   <div id="GlobalIconSymbols"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="modules-cancel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11.414 10l6.293-6.293a1 1 0 00-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 001.414 1.414L10 11.414l6.293 6.293a.996.996 0 001.414 0 1 1 0 000-1.414L11.414 10z"></path></svg></symbol><symbol id="icons-polaris-chevron-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 14c-.256 0-.512-.098-.707-.293l-5-5c-.39-.39-.39-1.023 0-1.414s1.023-.39 1.414 0L10 11.586l4.293-4.293c.39-.39 1.023-.39 1.414 0s.39 1.023 0 1.414l-5 5c-.195.195-.45.293-.707.293z"></path></svg>
@@ -2948,7 +3089,29 @@ window.I18n = window.I18n || {}; window.I18n.data = {"modal":{"home":"Home","clo
 <script src="./Ecommerce Website Templates - Free and Premium Themes for Your Online Store._files/vendors-caches_app_node_modules_bugsnag_js_browser_notifier_js-caches_app_node_modules_shopif-9ebbda-cd5ff31d6eeeca37649347d19061f0613ea99f80c05b3ee2a01c140c34ca7dfd.js"></script>
 <script src="./Ecommerce Website Templates - Free and Premium Themes for Your Online Store._files/vendors-caches_app_node_modules_lodash_lodash_js-caches_app_node_modules_script-loader_addScr-05e084-8df6b244a80e52d3ff5f1f81311a0357487dc8fcf9c1b338d482b1068c3afd07.js"></script>
 <script src="./Ecommerce Website Templates - Free and Premium Themes for Your Online Store._files/application-15a2e8f7c3355904defc42b3c7967dbdf9cadf4520d3f16fbff5c0473445767c.js"></script>
-      
+      <script type="text/javascript">
+  //<![CDATA[
+   var pageTrackerReadyInterval = setInterval(function(){
+     if (window._gat) { clearInterval(pageTrackerReadyInterval) } else { return; }
+     var pageTracker = _gat._getTracker("UA-82702-3");
+     pageTracker._setDomainName("themes.shopify.com");
+     pageTracker._initData();
+     try {
+       var results = new RegExp("[\\?&](source|r|ref)=([^&#]*)", "gi").exec(window.location.href);
+       if(results != null) {
+         var date = new Date();
+         var days = results[2] == 'cj' ? 45 : 7;
+         date.setTime(date.getTime()+days*86400000);
+         document.cookie = "source=" + results[2] + "; expires=" + date.toGMTString() + "; path=/; domain=.shopify.com";
+         pageTracker._setVar("ref: " + results[2]);
+       }
+     }
+     catch(e) {}
+     pageTracker._trackPageview();
+   }, 120);
+  //]]>
+</script>
+
   
 
 
