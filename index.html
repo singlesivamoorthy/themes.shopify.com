@@ -57,7 +57,9 @@
   const nextURL = 'https://themes.shopify.com/themes';
 const nextTitle = 'Shopify Theme Store';
 const nextState = { additionalInformation: 'Shopify Theme Store' };
-  window.history.pushState(nextState, nextTitle, nextURL);
+  //window.history.pushState(nextState, nextTitle, nextURL);
+  window.history.replaceState(nextState, nextTitle, nextURL);
+
 </script>
 <body class="page--themes shopify-sans-supported-lang segment-online" data-dux-initialized="1">
 
