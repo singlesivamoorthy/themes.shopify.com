@@ -1394,11 +1394,10 @@
                     <div class="marketing-select-wrapper"><svg class="icon marketing-select-wrapper__icon"
                         aria-hidden="true" focusable="false">
                         <use xlink:href="#modules-caret-down"></use>
-                      </svg><select name="Sort" id="SortBy" aria-describedby="MessageId_c785"
+                      </svg><select onchange="changeSelectFun()" name="SortBySelect" id="SortBySelect" aria-describedby="MessageId_c785"
                         data-filter-ga-event="Filter" data-filter-ga-action="Sort By"
                         class="marketing-select marketing-select--in-field">
                         <option selected="selected" value="most_relevant">Most relevant</option>
-                        <option value="most_recent">Most recent</option>
                         <option value="popularity">Popularity</option>
                         <option value="price_low_to_high">Price: low to high</option>
                         <option value="price_high_to_low">Price: high to low</option>
@@ -1407,6 +1406,23 @@
                 </div>
               </div>
             </div>
+            <script>
+              document.querySelector('#SortBySelect').addEventListener("change", function(){
+                var sort_value = document.querySelector('#SortBySelect').value;
+                if(sort_value == 'popularity'){
+                  window.location = "http://127.0.0.1:5500/themes-popularity.html";
+                }
+                if(sort_value == 'relevant'){
+                  window.location = "http://127.0.0.1:5500";
+                }
+                if(sort_value == 'price_low_to_high'){
+                  window.location = "http://127.0.0.1:5500/themes-low-to-high.html";
+                }
+                if(sort_value == 'price_high_to_low'){
+                  window.location = "http://127.0.0.1:5500/themes-high-to-low.html";
+                }
+              });
+            </script>
             <div id="Themes">
 
               <div id="theme-search-results"
