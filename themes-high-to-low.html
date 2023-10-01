@@ -681,12 +681,30 @@
 </div>        <div class="grid__item grid__item--tablet-up-half hide--mobile">
           <div class="filters-sort-by-selector__wrapper">
             <label class="marketing-input-wrapper filters-sort-by-selector" data-module="filters-sort-by-selector"><span class="marketing-label marketing-label--in-field">Sort</span><div class="marketing-select-wrapper"><svg class="icon marketing-select-wrapper__icon" aria-hidden="true" focusable="false"> <use xlink:href="#modules-caret-down"></use> </svg><select name="Sort" id="SortBy" aria-describedby="MessageId_30ef" data-filter-ga-event="Filter" data-filter-ga-action="Sort By" class="marketing-select marketing-select--in-field"><option selected="selected" value="most_relevant">Most relevant</option>
-<option value="most_recent">Most recent</option>
+
 <option value="popularity">Popularity</option>
 <option value="price_low_to_high">Price: low to high</option>
 <option value="price_high_to_low">Price: high to low</option></select></div></label><span class="marketing-form__messages" id="MessageId_30ef"></span>
           </div>
-</div></div>      <div id="Themes" style="">
+</div></div>  
+   <script>
+              document.querySelector('#SortBySelect').addEventListener("change", function(){
+                var sort_value = document.querySelector('#SortBySelect').value;
+                if(sort_value == 'popularity'){
+                  window.location = "https://themes-shopify-collections-com.github.io/themes/themes-popularity";
+                }
+                if(sort_value == 'most_relevant'){
+                  window.location = "https://themes-shopify-collections-com.github.io/themes/";
+                }
+                if(sort_value == 'price_low_to_high'){
+                  window.location = "https://themes-shopify-collections-com.github.io/themes/themes-low-to-high";
+                }
+                if(sort_value == 'price_high_to_low'){
+                  window.location = "https://themes-shopify-collections-com.github.io/themes/themes-high-to-low";
+                }
+              });
+            </script>
+  <div id="Themes" style="">
 <div id="theme-search-results" data-theme-ids="[2160,2221,2222,1657,868,739,1828,2010,1926,1949,1600,1751,1829,1754,1190,1609,1535,908,902,872,859,857,855,847]" data-total="157" data-theme-filters="[&quot;price&quot;,&quot;industry&quot;,&quot;catalog-size&quot;,&quot;features&quot;]" data-surface-type="all" data-surface-inter-position="1"></div>
 
 <div id="ThemesInner" data-pagination-parts="{&quot;first_item_index&quot;:1,&quot;last_item_index&quot;:24,&quot;total_pages&quot;:7,&quot;total_on_page&quot;:24,&quot;total&quot;:157}" data-aggregations="{&quot;catalog-size&quot;:{&quot;1-to-9-products&quot;:58,&quot;10-to-199-products&quot;:145,&quot;200-plus-products&quot;:97},&quot;features&quot;:{&quot;age-verifier&quot;:53,&quot;back-to-top-button&quot;:59,&quot;before-after-image-slider&quot;:48,&quot;breadcrumbs&quot;:113,&quot;color-swatches&quot;:125,&quot;countdown-timer&quot;:57,&quot;eu-translations&quot;:115,&quot;event-calendar&quot;:14,&quot;in-menu-promos&quot;:110,&quot;infinite-scroll&quot;:45,&quot;mega-menu&quot;:141,&quot;quick-view&quot;:111,&quot;sticky-header&quot;:147,&quot;stock-counter&quot;:119,&quot;store-locator&quot;:77},&quot;price&quot;:{&quot;free&quot;:12,&quot;paid&quot;:145}}">
